@@ -79,9 +79,18 @@ public class SkinController {
     public ResponseEntity<HttpStatus> deleteBoughtSkin (@PathVariable("id")int id) {
         try {
             boughtSkinService.deleteBoughtSkin(id);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT)
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR)
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/getskin/{id}")
+    public ResponseEntity<BoughtSkin> findBoughtSkin (@PathVariable("id")int id) {
+        Optional<BoughtSkin> boughtSkinData = boughtSkinService.findBoughtSkinById(id);
+        if (boughtSkinData.isPresent()) {
+            return new ResponseEntity<>(boughtSkinData.get(),HttpStatus.OK);
+        } else {return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
