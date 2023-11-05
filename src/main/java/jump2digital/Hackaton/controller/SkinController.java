@@ -1,5 +1,6 @@
 package jump2digital.Hackaton.controller;
 
+import com.sun.net.httpserver.HttpsServer;
 import jump2digital.Hackaton.model.entity.BoughtSkin;
 import jump2digital.Hackaton.model.entity.Skin;
 import jump2digital.Hackaton.model.service.BoughtSkinService;
@@ -71,6 +72,16 @@ public class SkinController {
             return new ResponseEntity<>(boughtSkinService.saveBoughtSkin(boughtSkin),HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<HttpStatus> deleteBoughtSkin (@PathVariable("id")int id) {
+        try {
+            boughtSkinService.deleteBoughtSkin(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT)
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
 
