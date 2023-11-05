@@ -12,7 +12,7 @@ public class Skin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int pk_SkinID;
+    private int id;
 
     @Column(name = "name")
     private String name;
@@ -32,8 +32,8 @@ public class Skin {
     public Skin() {
     }
 
-    public Skin(int pk_SkinID, String name, String type, int price, String colour, String hero) {
-        this.pk_SkinID = pk_SkinID;
+    public Skin(int id, String name, String type, int price, String colour, String hero) {
+        this.id = id;
         this.name = name;
         this.type = type;
         this.price = price;
@@ -41,8 +41,8 @@ public class Skin {
         this.hero = hero;
     }
 
-    public int getPk_SkinID() {
-        return pk_SkinID;
+    public int getId() {
+        return id;
     }
 
     public String getName() {

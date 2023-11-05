@@ -1,5 +1,6 @@
 package jump2digital.Hackaton.model.service;
 
+import jump2digital.Hackaton.model.entity.BoughtSkin;
 import jump2digital.Hackaton.model.entity.Skin;
 import jump2digital.Hackaton.model.repository.SkinRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,9 @@ public class SkinServiceImpl implements SkinService{
 
     @Override
     public Optional<Skin> findSkinById(Integer id) {
-        return Optional.empty();
+        Optional<Skin> skin= skinRepository.findById(id);
+        if(skin.isPresent()) return skin;
+        else return Optional.empty();
     }
 
     @Override

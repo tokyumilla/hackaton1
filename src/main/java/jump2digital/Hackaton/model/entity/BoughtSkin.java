@@ -8,7 +8,7 @@ public class
 BoughtSkin {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer pk_SkinID;
+    private Integer id;
 
     @Column(name = "name")
     private String name;
@@ -28,6 +28,7 @@ BoughtSkin {
     public BoughtSkin() {
     }
 
+
     public BoughtSkin(String name, String type, int price, String colour, String hero) {
         this.name = name;
         this.type = type;
@@ -36,8 +37,8 @@ BoughtSkin {
         this.hero = hero;
     }
 
-    public Integer getPk_SkinID() {
-        return pk_SkinID;
+    public Integer getId() {
+        return id;
     }
 
     public String getName() {
