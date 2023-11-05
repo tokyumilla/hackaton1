@@ -49,6 +49,19 @@ public class SkinController {
         }
     }
 
+    @GetMapping("/myskins")
+    public ResponseEntity<List<BoughtSkin>> getAllBoughtSkins (){
+        try {
+            List<BoughtSkin> mySkins = boughtSkinService.findAllBoughtSkins();
+            if (mySkins.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            else return new ResponseEntity<>(mySkins, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 
 
 
