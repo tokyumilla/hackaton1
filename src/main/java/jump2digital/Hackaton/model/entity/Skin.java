@@ -1,12 +1,10 @@
 package jump2digital.Hackaton.model.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 
 
 
-@AllArgsConstructor
+
 @Entity
 @Table(name = "Skins")
 public class Skin {
@@ -14,7 +12,7 @@ public class Skin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int pk_SkinID;
 
     @Column(name = "name")
     private String name;
@@ -34,14 +32,15 @@ public class Skin {
     public Skin() {
     }
 
-
-    public Long getId() {
-        return id;
+    public Skin(String name, String type, int price, String colour, String character) {
+        this.name = name;
+        this.type = type;
+        this.price = price;
+        this.colour = colour;
+        this.character = character;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+
 
     public String getName() {
         return name;

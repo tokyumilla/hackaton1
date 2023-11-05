@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "name": "Galante",
     "type": "normal",
     "price": 200,
@@ -8,7 +7,6 @@
     "character": "Darius"
   },
   {
-    "id": 1,
     "name": "De las Aguas",
     "type": "special",
     "price": 500,
@@ -16,7 +14,6 @@
     "character": "Nami"
   },
   {
-    "id": 1,
     "name": "Navideña",
     "type": "normal",
     "price": 200,
@@ -24,7 +21,6 @@
     "character": "Ashe"
   },
   {
-    "id": 1,
     "name": "Victoriosa",
     "type": "diamond",
     "price": 1000,
