@@ -3,14 +3,14 @@ package jump2digital.Hackaton.model.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="Skins")
+@Table(name="BoughtSkins")
 public class 
 BoughtSkin {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer pk_SkinID;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     private String name;
 
     @Column(name = "type")
@@ -22,18 +22,18 @@ BoughtSkin {
     @Column(name = "colour")
     private String colour;
 
-    @Column(name = "character")
-    private String character;
+    @Column(name = "hero")
+    private String hero;
 
     public BoughtSkin() {
     }
 
-    public BoughtSkin(String name, String type, int price, String colour, String character) {
+    public BoughtSkin(String name, String type, int price, String colour, String hero) {
         this.name = name;
         this.type = type;
         this.price = price;
         this.colour = colour;
-        this.character = character;
+        this.hero = hero;
     }
 
     public Integer getPk_SkinID() {
@@ -72,12 +72,12 @@ BoughtSkin {
         this.colour = colour;
     }
 
-    public String getCharacter() {
-        return character;
+    public String getHero() {
+        return hero;
     }
 
-    public void setCharacter(String character) {
-        this.character = character;
+    public void setHero(String hero) {
+        this.hero = hero;
     }
 }
 

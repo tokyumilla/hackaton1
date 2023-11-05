@@ -26,8 +26,8 @@ public class Skin {
     @Column(name = "colour")
     private String colour;
 
-    @Column(name = "character")
-    private String character;
+    @Column(name = "hero")
+    private String hero;
 
     public Skin() {
     }
@@ -37,7 +37,7 @@ public class Skin {
         this.type = type;
         this.price = price;
         this.colour = colour;
-        this.character = character;
+        this.hero = character;
     }
 
 
@@ -74,12 +74,12 @@ public class Skin {
         this.colour = colour;
     }
 
-    public String getCharacter() {
-        return character;
+    public String getHero() {
+        return hero;
     }
 
-    public void setCharacter(String character) {
-        this.character = character;
+    public void setHero(String hero) {
+        this.hero = hero;
     }
 }
 
