@@ -62,6 +62,18 @@ public class SkinController {
         }
     }
 
+    @PutMapping("/{id}/color")
+    public ResponseEntity<BoughtSkin> updateColour(@PathVariable("id") int id, @RequestBody String colour){
+        Optional<BoughtSkin> boughtSkinData = boughtSkinService.findBoughtSkinById(id);
+        if (boughtSkinData.isPresent()) {
+            BoughtSkin boughtSkin = boughtSkinData.get();
+            boughtSkin.setColour(colour);
+            return new ResponseEntity<>(boughtSkinService.saveBoughtSkin(boughtSkin),HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 
 
 
