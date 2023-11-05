@@ -32,15 +32,18 @@ public class Skin {
     public Skin() {
     }
 
-    public Skin(String name, String type, int price, String colour, String character) {
+    public Skin(int pk_SkinID, String name, String type, int price, String colour, String hero) {
+        this.pk_SkinID = pk_SkinID;
         this.name = name;
         this.type = type;
         this.price = price;
         this.colour = colour;
-        this.hero = character;
+        this.hero = hero;
     }
 
-
+    public int getPk_SkinID() {
+        return pk_SkinID;
+    }
 
     public String getName() {
         return name;
