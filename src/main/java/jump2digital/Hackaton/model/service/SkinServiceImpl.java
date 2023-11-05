@@ -16,7 +16,7 @@ public class SkinServiceImpl implements SkinService{
 
     @Override
     public List<Skin> findAllSkins() {
-        return null;
+        return skinRepository.findAll();
     }
 
     @Override
